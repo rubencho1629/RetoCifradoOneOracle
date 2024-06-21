@@ -31,5 +31,4 @@ desarrollado por.
 
 Ruben Hernandez- Trabajo Inicial 
 
-Licencia 📄
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo LICENSE.md para detalles
+
