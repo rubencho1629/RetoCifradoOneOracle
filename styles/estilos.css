@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f5fc;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    text-align: justify;
+}
+
+header img {
+    max-width: 100%; /* Ajusta la imagen del logo al ancho máximo del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    padding: 50px; /* Espacio adicional alrededor de la imagen */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten al tamaño de la pantalla */
+    justify-content: space-around;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+}
+
+.seccion_1 {
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    max-width: 600px; /* Ancho máximo para tablets */
+    text-align: center;
+    padding-right: 20px; /* Espacio adicional a la derecha */
+}
+
+.seccion_1 p {
+    text-align: left; /* Alineación del texto a la izquierda */
+    margin-left: 20px; /* Margen izquierdo para separar del borde */
+
+}
+
+.seccion_2 {
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    max-width: 400px; /* Ancho máximo para tablets */
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding-bottom: 50px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor_imagen img {
+    width: 100%; /* Ajusta la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    padding-top: 20px;
+}
+
+.contenedor_imagen {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.contenedor_subtitulos,
+.contenedor_parrafo {
+    padding: 20px; /* Reducción del padding para pantallas pequeñas */
+}
+
+.textarea {
+    width: 100%;
+    height: 120px; /* Ajusta la altura del textarea para mejor visualización en dispositivos móviles */
+    resize: none;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 18px; /* Tamaño de fuente ajustado para dispositivos móviles */
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #000;
+}
+
+.signo {
+    width: 2%;
+    font-size: 30px;
+    color: #000;
+    margin-top: 20px;
+}
+
+.contenedor_botones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.boton_encriptar,
+.boton_desencriptar,
+.boton_copiar {
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 200px; /* Ancho máximo para mantener tamaño razonable */
+    height: 40px;
+    background-color: white;
+    border: 1px solid #0A3871;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px; /* Espacio entre botones */
+}
+
+.boton_copiar {
+    margin-top: 20px; /* Espacio mayor en el botón de copiar */
+}
+
+.boton_encriptar:hover,
+.boton_desencriptar:hover,
+.boton_copiar:hover {
+    background-color: #0A3871;
+    color: white;
+}
+
+.oculto {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    /* Estilos adicionales para tablets y pantallas más grandes */
+    .seccion_1 {
+        width: 60%; /* Porcentaje del ancho total para mantener diseño similar */
+        margin-bottom: 0; /* Elimina el margen inferior en tablets */
+    }
+
+    .seccion_2 {
+        width: 30%; /* Porcentaje del ancho total para mantener diseño similar */
+        padding: 40px; /* Aumenta el padding para tablets */
+    }
+
+    .textarea {
+        font-size: 25px; /* Tamaño de fuente aumentado para tablets */
+        height: 150px; /* Ajusta la altura del textarea para tablets */
+    }
+
+    .contenedor_imagen img {
+        padding-top: 40px; /* Aumenta el espacio superior de la imagen para tablets */
+    }
+
+    .contenedor_subtitulos,
+    .contenedor_parrafo {
+        padding: 50px; /* Aumenta el padding para tablets */
+    }
+
+    .boton_encriptar,
+    .boton_desencriptar,
+    .boton_copiar {
+        width: 48%; 
+        max-width: none; /
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Estilos para dispositivos móviles (p. ej., smartphones) */
+    .seccion_1 {
+        padding-right: 0; 
+    }
+
+    .seccion_2 {
+        padding-bottom: 20px; 
+    }
+
+    .textarea {
+        font-size: 16px; 
+        height: 100px; 
+    }
+
+    .contenedor_subtitulos,
+    .contenedor_parrafo {
+        padding: 20px; 
+    }
+
+    .boton_encriptar,
+    .boton_desencriptar,
+    .boton_copiar {
+        max-width: none;
+    }
+}

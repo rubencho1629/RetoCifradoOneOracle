@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <title>Desafio Cifrado</title>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="logo de la aplicacion">
+    </header>
+    <main>
+        <section class="seccion_1">
+            <textarea id="textoEncriptado" class="textarea" placeholder="Ingrese el texto aqui"></textarea>
+            <p><img src="img/signo.png" alt="signo de exclamacion" class="signo"> Solo letras minúsculas y sin acentos </p>
+            <div class="contenedor_botones">
+                <input type="button" value="Encriptar" class="boton_encriptar" id="botonEncriptar">
+                <input type="button" value="Desencriptar" class="boton_desencriptar" id="botonDesencriptar">
+            </div>
+        </section>
+        <section class="seccion_2">
+            <div class="contenedor_imagen">
+                <img src="img/Muñeco.png" alt="Muñeco">
+            </div>
+            <textarea id="textoDesencriptado" class="textarea"  readonly></textarea>
+            <div class="contenedor_subtitulos">
+                <h3>Ningún mensaje fue encontrado</h3>
+                <br>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <!-- <div class="contenedor_parrafo">
+                
+            </div> -->
+            <input type="button" value="Copiar" class="boton_copiar" id="botonCopiar">
+        </section>
+    </main>
+    <footer></footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
