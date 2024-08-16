@@ -159,6 +159,21 @@ main {
         max-width: none; /
     }
 }
+/* Cambiar el color del título */
+.swal-title-custom {
+    color: #0A3871; 
+}
+
+/* Cambiar el color de fondo del cuadro de diálogo */
+.swal-popup-custom {
+    background-color: #f0f8ff; /* Azul claro */
+}
+
+/* Cambiar el color del botón de confirmación */
+.swal-confirm-button-custom {
+    background-color: #0A3871; 
+    color: white; 
+}
 
 @media only screen and (max-width: 480px) {
     /* Estilos para dispositivos móviles (p. ej., smartphones) */

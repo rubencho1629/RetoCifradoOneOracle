@@ -1,5 +1,14 @@
+// Función para validar el texto
+const validarTexto = (texto) => {
+    const regex = /^[a-z\s]*$/; // Solo permite minúsculas y espacios
+    if (!regex.test(texto)) {
+        throw new Error("El texto solo debe contener letras minúsculas y sin acentos.");
+    }
+};
+
 // Función para encriptar el texto
 const encriptar = (texto) => {
+    validarTexto(texto); // Validar antes de encriptar
     return texto.replace(/e/g, "enter")
                 .replace(/i/g, "imes")
                 .replace(/a/g, "ai")
@@ -9,6 +18,7 @@ const encriptar = (texto) => {
 
 // Función para desencriptar el texto
 const desencriptar = (texto) => {
+    validarTexto(texto); // Validar antes de desencriptar
     return texto.replace(/enter/g, "e")
                 .replace(/imes/g, "i")
                 .replace(/ai/g, "a")
@@ -24,8 +34,8 @@ document.getElementById('botonEncriptar').addEventListener('click', () => {
         document.getElementById('textoDesencriptado').value = resultado;
         actualizarVisibilidad();
     } catch (error) {
-        console.error('Error al encriptar:', error);
-        alert('Ocurrió un error al encriptar el texto.');
+        console.error('Error al encriptar:', error.message);
+        Swal.fire({ icon: 'error', title: 'Error', text: error.message });
     }
 });
 
@@ -37,8 +47,8 @@ document.getElementById('botonDesencriptar').addEventListener('click', () => {
         document.getElementById('textoDesencriptado').value = resultado;
         actualizarVisibilidad();
     } catch (error) {
-        console.error('Error al desencriptar:', error);
-        alert('Ocurrió un error al desencriptar el texto.');
+        console.error('Error al desencriptar:', error.message);
+        Swal.fire({ icon: 'error', title: 'Error', text: error.message });
     }
 });
 
@@ -48,17 +58,32 @@ document.getElementById('botonCopiar').addEventListener('click', () => {
         const resultado = document.getElementById('textoDesencriptado');
         resultado.select();
         document.execCommand('copy');
-        alert("Texto copiado al portapapeles");
+        Swal.fire({
+            icon: 'success',
+            title: 'Copiado',
+            text: 'El texto se copió al portapapeles.',
+            customClass: {
+                title: 'swal-title-custom', 
+                popup: 'swal-popup-custom',  
+                confirmButton: 'swal-confirm-button-custom'
+            }
+        });
     } catch (error) {
-        console.error('Error al copiar:', error);
-        alert('Ocurrió un error al intentar copiar el texto.');
+        console.error('Error al copiar:', error.message);
+        Swal.fire({ icon: 'error', title: 'Error', text: 'Ocurrió un error al copiar el texto al portapapeles.' });
     }
 });
 
 // Event listener para detectar cambios en el primer textarea y actualizar el segundo
 document.getElementById('textoEncriptado').addEventListener('input', () => {
     const texto = document.getElementById('textoEncriptado').value;
-    document.getElementById('textoDesencriptado').value = texto ? encriptar(texto) : '';
+    try {
+        validarTexto(texto);
+        document.getElementById('textoDesencriptado').value = texto ? encriptar(texto) : '';
+    } catch (error) {
+        console.error('Error en el texto:', error.message);
+        Swal.fire({ icon: 'error', title: 'Error', text: error.message });
+    }
     actualizarVisibilidad();
 });
 
